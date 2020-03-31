@@ -1,0 +1,88 @@
+*rian.txt* list of new things I've learned while using Vim
+
+RRRRR   IIIII     A     NN    N
+R    R    I      A A    N N   N
+RRRRR     I     A   A   N  N  N
+R    R    I    AAAAAAA  N   N N
+R     R IIIII A       A N    NN
+
+==============================================================================
+CONTENTS                                               *rian*
+
+    0. Foreword ............................... |rian-foreword|
+    1. Chapter 1, The Vim Way.................. |rian-ch1|
+
+==============================================================================
+0. Foreword					                           *rian-foreword*
+
+This help document was made to help me reinforce some of the things I've
+learned while reading 'Practical Vim, Second Edition' by Drew Neil.
+
+	source: https://pragprog.com/book/dnvim2/practical-vim-second-edition
+
+Each section will represent a chapter in the book. Not everything I learn and
+write down will have been sourced directly from the book; some things will
+a result of being triggered by something else I've read or learned. I will
+write it down in either case, as that will be a proper record of my
+experience.
+
+Hopefully if someone reads this, they will be inspired to buy and read the
+book for themselves, as it has been quite a good read for me so far.
+
+For example, not until today did I ever think about writing `:help` documents
+for myself!
+
+==============================================================================
+1. Chapter 1, The Vim Way                              *rian-ch1*
+
+:help <topic>
+:h <topic>
+					A shortcut for `:help` is `:h`.
+
+$HOME/<user>/desktop
+~/<user>/desktop
+		            A shortcut for $HOME is `~`
+				    I knew this, but never thought to try it
+
+<C-X>
+			        The notation for CTRL-X (for example), is <C-X>
+				    Another thing I should know, but haven't solidified
+
+t
+					The representation of the text object
+					for an html {tag}
+
+vim -u NONE
+					To start Vim with no .vimrc enabled
+
+vim -u filename.vim
+					To start Vim with a custom .vimrc
+					file specified by the user
+
+>{motion}
+					The '>' command also accepts a {motion}, much like other
+					actions. Never occurred to me to try anything other than
+					'>>' or {Visual}>
+
+cl
+					Amazingly, this is synonymous with s. This is less a
+					useful tip, as it is just a surprise to me that using l as
+					a motion for a command has never occurred to me.
+
+S
+					This is equivalent to ^C, which means replace whole line
+					starting from the first non-blank character
+
+@:					Repeat the last {Ex} command. Interestingly, the reason
+					this works is because, once executed, Ex commands are
+					written to the ':' register, and @: invokes it like a
+					macro! `wow`
+
+&					Repeat the last {substitute} command, keeping no flags.
+					This sucks when @: exists.
+
+:&&					Repeat the last {substitute} command, keeping all flags.
+					This sucks when @: exists.
+
+&g					Repeat the last {substitute} command for all lines in rest
+					of file, keeping all flags.
