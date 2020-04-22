@@ -7,14 +7,19 @@ set clipboard=unnamed
 " Search options
 set hlsearch
 set incsearch
-set ignorecase
-set smartcase
 
 " Nice scrolling
 set scrolloff=5
 
 " Display cursor line
 set cursorline
+
+" Leader key
+let mapleader=" "
+nnoremap <SPACE> <Nop>
+
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
 
 " Moving lines
 nnoremap <silent> <A-k> :move-2<CR>

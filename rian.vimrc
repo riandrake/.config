@@ -70,15 +70,10 @@ filetype plugin indent on    " required
 
 "========== [Keymap_Settings] =========="
 
-" Leader key
-let mapleader=" "
-nnoremap <SPACE> <Nop>
 
 " Quick save/quit
-nnoremap <leader>w :w<cr>
 nnoremap <leader>e :MayaScriptEditorSend<cr>
 nnoremap <leader>r :MayaScriptEditorClear<cr>
-nnoremap <leader>q :q<cr>
 
 " Comment line
 nmap <C-c> gcil
