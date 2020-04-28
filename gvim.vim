@@ -24,6 +24,8 @@ Plug 'VundleVim/Vundle.vim'
 " Fonts
 Plug 'powerline/fonts'
 
+Plug 'terryma/vim-multiple-cursors'
+
 " Status line
 "
 Plug 'vim-airline/vim-airline'
@@ -31,15 +33,13 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='wombat'
 let g:airline#extensions#tabline#enabled = 0
 
-" Maya
-Plug 'minoue/mayaScriptEditor.vim'
-let g:MayaScriptEditorEnableOutput = 1
-
 " Distraction free
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 
 " Surround motion
 Plug 'tpope/vim-surround'
+
+Plug 'easymotion/vim-easymotion'
 
 " Repeatable plugins
 Plug 'tpope/vim-repeat'
@@ -223,4 +223,4 @@ autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType h setlocal commentstring=//\ %s
 
-:so $HOME/vimfiles/vsvim.vimrc
+:so $HOME/vimfiles/common.vim
