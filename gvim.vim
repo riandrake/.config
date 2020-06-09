@@ -186,7 +186,6 @@ set history=200
 
 " Relative line numbers
 set number
-set relativenumber
 
 " Default size
 set lines=40
