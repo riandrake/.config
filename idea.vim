@@ -8,6 +8,6 @@ set textobj-entire
 so ~/vimfiles/common.vim
 
 nnoremap <leader>r :action ReformatCode<cr>
-nnoremap <leader>g :action GotoImplementation<cr>
+nnoremap <leader>g :action GotoDeclaration<cr>
 nnoremap <leader>p :action QuickImplementations<cr>
 nnoremap <leader>d :action QuickJavaDoc<cr>
