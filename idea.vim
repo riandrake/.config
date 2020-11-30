@@ -35,5 +35,12 @@ nnoremap <leader>5 :action Debug<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <a-h> :action PreviousTab<cr>
 nnoremap <a-l> :action NextTab<cr>
-
 inoremap <c-j> <cr>
+
+nnoremap <leader>th I/// TODO:<space>
+nnoremap <leader>tl A<space>/// TODO:<space>
+nnoremap <leader>tj o/// TODO:<space>
+nnoremap <leader>tk O/// TODO:<space>
+
+nnoremap <leader>b O{<esc>jo<c-d>}<esc>
+nnoremap <leader>B kddjdd
