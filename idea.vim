@@ -37,10 +37,14 @@ nnoremap <a-h> :action PreviousTab<cr>
 nnoremap <a-l> :action NextTab<cr>
 inoremap <c-j> <cr>
 
-nnoremap <leader>th I/// TODO:<space>
-nnoremap <leader>tl A<space>/// TODO:<space>
-nnoremap <leader>tj o/// TODO:<space>
-nnoremap <leader>tk O/// TODO:<space>
+nnoremap <leader>th I// TODO:<space>
+nnoremap <leader>tl A<space>// TODO:<space>
+nnoremap <leader>tj o// TODO:<space>
+nnoremap <leader>tk O// TODO:<space>
 
 nnoremap <leader>b O{<esc>jo<c-d>}<esc>
 nnoremap <leader>B kddjdd
+
+vnoremap <leader>f C// @formatter:off<cr>// @formatter:on<esc>P
+
+set visualbell
