@@ -72,61 +72,19 @@ filetype plugin indent on    " required
 
 "========== [Keymap_Settings] =========="
 
-
-" Quick save/quit
-nnoremap <leader>e :MayaScriptEditorSend<cr>
-nnoremap <leader>r :MayaScriptEditorClear<cr>
-
 " Comment line
-nmap <C-c> gcil
-vmap <C-c> gc
+nmap <c-c> gcil
+vmap <c-c> gc
 
-nnoremap <silent> <a-/> :s/\\/\//g<cr>
-nnoremap <silent> <a-\> :s/\//\\/g<cr>
-vnoremap <silent> <a-/> :s/\\/\//g<cr>gv
-vnoremap <silent> <a-\> :s/\//\\/g<cr>gv
-
-nnoremap <F7> :call <SID>compile_and_run()<CR>
-nnoremap <S-F7> :AsyncStop<Enter>
-nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <f7> :call <SID>compile_and_run()<CR>
+nnoremap <s-f7> :AsyncStop<Enter>
+nnoremap <f10> :call asyncrun#quickfix_toggle(6)<cr>
 
 " Clear search highlight with escape
 nnoremap <esc> :noh<return><esc>
 
-" Buffer navigation
-nnoremap <silent> <a-h> :bprevious<CR>
-nnoremap <silent> <a-l> :bnext<CR>
-
-" Netrw mapping
-let g:NetrwIsOpen=0
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
-endfunction
-
-" Add your own mapping. For example:
-noremap <silent> <C-n> :call ToggleNetrw()<CR>
-
-" Split navigation
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-
 " Open explorer here
-nnoremap <F1> :!start explorer.exe .<CR>
+nnoremap <f1> :!start explorer.exe .<CR>
 
 "========== [GUI_Settings] =========="
 
@@ -158,14 +116,6 @@ syntax enable
 
 " No wrapped text
 set nowrap
-
-" Explore settings
-"
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
 
 " Tab settings
 set tabstop=4
@@ -203,7 +153,6 @@ function! s:compile_and_run()
 endfunction
 
 " Custom commenting via tpope/commentary plugin
-autocmd FileType act setlocal commentstring=//\ %s
 autocmd FileType c setlocal commentstring=//\ %s
 autocmd FileType cpp setlocal commentstring=//\ %s
 autocmd FileType h setlocal commentstring=//\ %s

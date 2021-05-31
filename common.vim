@@ -1,27 +1,27 @@
-" When using any vim exe or emulator
+" when using any vim exe or emulator
 
-" Press Escape to clear search highlight
+" press escape to clear search highlight
 nnoremap <esc> :noh<return><esc>
 
-" System clipboard
+" system clipboard
 set clipboard=unnamed
 
-" Search options
+" search options
 set hlsearch
 set incsearch
 set smartcase
 
-" Nice scrolling
+" nice scrolling
 set scrolloff=5
 
-" Display cursor line
+" display cursor line
 set cursorline
 
-" Leader key
+" leader key
 let mapleader=" "
-nnoremap <SPACE> <Nop>
+nnoremap <space> <nop>
 
-" Mark key remap
+" mark key remap
 nnoremap ' `
 nnoremap ` '
 onoremap ' `
@@ -30,8 +30,18 @@ onoremap ` '
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
-" Moving lines
-nnoremap <silent> <A-k> :move-2<CR>
-xnoremap <silent> <A-k> :move-2<CR>gv
-nnoremap <silent> <A-j> :move+<CR>
-xnoremap <silent> <A-j> :move'>+<CR>gv
+" moving lines
+nnoremap <silent> <a-k> :move-2<cr>
+xnoremap <silent> <a-k> :move-2<cr>gv
+nnoremap <silent> <a-j> :move+<cr>
+xnoremap <silent> <a-j> :move'>+<cr>gv
+
+" split navigation
+nnoremap <a-h> <c-w><c-h>
+nnoremap <a-j> <c-w><c-j>
+nnoremap <a-k> <c-w><c-k>
+nnoremap <a-l> <c-w><c-l>
+
+" buffer navigation
+nnoremap <silent> <c-h> :bprevious<cr>
+nnoremap <silent> <c-l> :bnext<cr>

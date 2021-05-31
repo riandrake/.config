@@ -26,6 +26,7 @@ so ~/vimfiles/common.vim
 
 
 " [Hotkeys]
+nnoremap <leader>e :action P4Edit<cr>
 nnoremap <leader>r :action ReformatCode<cr>
 nnoremap <leader>g :action GotoDeclaration<cr>
 nnoremap <leader>p :action QuickImplementations<cr>
