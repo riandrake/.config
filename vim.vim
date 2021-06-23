@@ -21,9 +21,6 @@ call plug#begin('~/vimfiles/plugged')
 " let Vundle manage Vundle, required
 Plug 'VundleVim/Vundle.vim'
 
-" Fonts
-Plug 'powerline/fonts'
-
 Plug 'terryma/vim-multiple-cursors'
 
 " Status line
@@ -102,7 +99,7 @@ set autoindent
 set smartindent
 
 " Font
-let &guifont="JetBrainsMono_Nerd_Font_Mono:h10"
+let &guifont="JetBrains_Mono:h10:cANSI"
 
 " Show current command.
 set showcmd 
