@@ -45,3 +45,7 @@ nnoremap <a-l> <c-w><c-l>
 " buffer navigation
 nnoremap <silent> <c-h> :bprevious<cr>
 nnoremap <silent> <c-l> :bnext<cr>
+
+" No ding please
+set visualbell
+set noerrorbells
