@@ -21,49 +21,7 @@ call plug#begin('~/vimfiles/plugged')
 " let Vundle manage Vundle, required
 Plug 'VundleVim/Vundle.vim'
 
-Plug 'terryma/vim-multiple-cursors'
-
-" Status line
-"
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='wombat'
-let g:airline#extensions#tabline#enabled = 0
-
-" Distraction free
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-
-Plug 'kshenoy/vim-signature'
-
-" Surround motion
-Plug 'tpope/vim-surround'
-
-Plug 'easymotion/vim-easymotion'
-
-" Repeatable plugins
-Plug 'tpope/vim-repeat'
-
-" Comment motion
-Plug 'tpope/vim-commentary'
-
-" Replace with Register
-Plug 'vim-scripts/ReplaceWithRegister'
-
-" Sorting motion
-Plug 'christoomey/vim-sort-motion'
-
-" Async Run
-Plug 'skywind3000/asyncrun.vim'
-let g:asyncrun_open = 15
-
-" Entire document as a text object
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-line'
-
-" Indents as a text object
-Plug 'michaeljsmith/vim-indent-object'
-
+so ~/vimfiles/common_plugins.vim
 call plug#end()              " required
 filetype plugin indent on    " required
 
@@ -73,6 +31,8 @@ filetype plugin indent on    " required
 nmap <c-c> gcil
 vmap <c-c> gc
 
+nnoremap <c-s-b> :call <SID>compile_and_run()<CR>
+nnoremap <c-s-a-b> :AsyncStop<Enter>
 nnoremap <f7> :call <SID>compile_and_run()<CR>
 nnoremap <s-f7> :AsyncStop<Enter>
 nnoremap <f10> :call asyncrun#quickfix_toggle(6)<cr>
