@@ -11,6 +11,9 @@ set hlsearch
 set incsearch
 set smartcase
 
+set number
+set relativenumber
+
 " nice scrolling
 set scrolloff=5
 
