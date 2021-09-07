@@ -61,15 +61,8 @@ set shiftwidth=4
 " Increased command history
 set history=200
 
-" Relative line numbers
-set number
-
 " Autoreload files
 set autoread
-
-" Doesn't work in Visual Studio
-" Nicer horizontal scrolling
-set sidescrolloff=5
 
 " Set swap file directory
 set dir=~/.vimcache
@@ -92,4 +85,4 @@ augroup python_file
     autocmd FileType python nnoremap <c-s-b> :AsyncRun python -u "%"<CR>
 augroup END
 
-:so $HOME/vimfiles/common.vim
+:so ~/vimfiles/common.vim

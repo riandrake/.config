@@ -2,7 +2,6 @@
 
 " [Plugins]
 
-set easymotion
 set surround
 set multiple-cursors
 set commentary
@@ -40,5 +39,16 @@ nnoremap <leader>b O{<esc>jo<c-d>}<esc>
 nnoremap <leader>B kddjdd
 
 vnoremap <leader>f C// @formatter:off<cr>// @formatter:on<esc>P
+
+" Enable NERDTree
+set NERDTree
+" Focus the Explorer tab
+map <leader><n> :NERDTreeFocus<CR>
+" Open the Explorer tab
+map <C-n> :NERDTree<CR>
+" Toggle focus to the Explorer tab
+map <C-t> :NERDTreeToggle<CR>
+" Navigate to current file in the Explorer tab
+map <C-f> :NERDTreeFind<CR>
 
 set visualbell

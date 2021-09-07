@@ -1,5 +1,5 @@
 Plug 'christoomey/vim-sort-motion'
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
