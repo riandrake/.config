@@ -3,6 +3,10 @@
 " press escape to clear search highlight
 nnoremap <esc> :noh<return><esc>
 
+color onedark
+
+set nowrap
+
 " system clipboard
 set clipboard=unnamed
 

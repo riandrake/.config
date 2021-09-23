@@ -2,9 +2,6 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 so ~/vimfiles/common_plugins.vim
-Plug 'neomake/neomake'
-Plug 'davidhalter/jedi-vim'
-Plug 'zchee/deoplete-jedi'
 call plug#end()"
 
 let g:deoplete#enable_at_startup = 1
@@ -13,8 +10,6 @@ let g:python3_host_prog = 'C:\Program Files (x86)\Python39-32\python.exe'
 "========== [Common_Settings] =========="
 
 so ~/vimfiles/common.vim
-color allomancer
-set nowrap
 set fileformats=dos
 
 "========== [Keymap_Settings] =========="
@@ -39,7 +34,7 @@ set autoindent
 set smartindent
 
 " Font
-let &guifont="JetBrains_Mono:h10:cANSI"
+let &guifont="JetBrains\ Mono:h10:cANSI"
 
 " Show current command.
 set showcmd 
@@ -84,5 +79,3 @@ augroup python_file
     autocmd!
     autocmd FileType python nnoremap <c-s-b> :AsyncRun python -u "%"<CR>
 augroup END
-
-:so ~/vimfiles/common.vim

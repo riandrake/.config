@@ -1,5 +1,4 @@
 Plug 'christoomey/vim-sort-motion'
-Plug 'justinmk/vim-sneak'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-line'
@@ -15,6 +14,8 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'cespare/vim-toml'
+Plug 'joshdick/onedark.vim'
 
 let PYTHONUNBUFFERED=1
 let g:airline#extensions#tabline#enabled = 0
