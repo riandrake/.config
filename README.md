@@ -5,8 +5,6 @@ Currently, I only retain configurations for:
 - NeoVim
 - IdeaVim
 
-Support for Vim and GVim was shortly dropped after the inclusion of NeoVim, as I decided NeoVim was simpler to configure and rendered them redundant.
-
 ## Installation
 
 ### Common Setup
