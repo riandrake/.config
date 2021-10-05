@@ -1,49 +1,41 @@
-" when using any vim exe or emulator
+" Common settings I use across all configurations (vim, gvim, neovim, ideavim etc)
 
 " press escape to clear search highlight
 nnoremap <esc> :noh<return><esc>
 
+" Preferred colorscheme
 color onedark
 
+" Never wrap text
 set nowrap
 
-" system clipboard
+" Use the system clipboard as the default register
 set clipboard=unnamed
 
-" search options
+" Search behaviour (/)
 set hlsearch
 set incsearch
 set smartcase
 
+" Preferred line numbers
 set number
 set relativenumber
 
-" nice scrolling
+" Keeps the top/bottom of the screen at least 5 lines away from the cursor
 set scrolloff=5
 
-" display cursor line
+" Highlight the line the cursor is on
 set cursorline
 
-" leader key
+" Preferred leader key (spacebar)
 let mapleader=" "
 nnoremap <space> <nop>
 
-" mark key remap
-nnoremap ' `
-nnoremap ` '
-onoremap ' `
-onoremap ` '
-
+" Quick save/quit
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
-" moving lines
-nnoremap <silent> <a-k> :move-2<cr>
-xnoremap <silent> <a-k> :move-2<cr>gv
-nnoremap <silent> <a-j> :move+<cr>
-xnoremap <silent> <a-j> :move'>+<cr>gv
-
-" split navigation
+" Split navigation
 nnoremap <a-h> <c-w><c-h>
 nnoremap <a-j> <c-w><c-j>
 nnoremap <a-k> <c-w><c-k>
@@ -53,6 +45,6 @@ nnoremap <a-l> <c-w><c-l>
 nnoremap <silent> <a-h> :bprevious<cr>
 nnoremap <silent> <a-l> :bnext<cr>
 
-" No ding please
+" No ping noises please
 set visualbell
 set noerrorbells

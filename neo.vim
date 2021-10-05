@@ -1,7 +1,30 @@
 "========== [Plugin_Settings] =========="
 
 call plug#begin('~/.local/share/nvim/plugged')
-so ~/vimfiles/common_plugins.vim
+Plug 'christoomey/vim-sort-motion'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
+Plug 'kshenoy/vim-signature'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'ngemily/vim-vp4'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'cespare/vim-toml'
+Plug 'joshdick/onedark.vim'
+
+let PYTHONUNBUFFERED=1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_theme='wombat'
+let g:asyncrun_open = 15
+let g:asyncrun_open = 20
 call plug#end()"
 
 let g:deoplete#enable_at_startup = 1
