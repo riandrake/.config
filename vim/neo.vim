@@ -32,7 +32,7 @@ let g:python3_host_prog = 'C:\Program Files (x86)\Python39-32\python.exe'
 
 "========== [Common_Settings] =========="
 
-so ~/vimfiles/common.vim
+so ~/.config/vim/common.vim
 set fileformats=dos
 
 "========== [Keymap_Settings] =========="

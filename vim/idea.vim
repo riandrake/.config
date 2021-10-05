@@ -17,7 +17,7 @@ set NERDTree
 set idearefactormode=keep
 
 " Apply settings I use in every vim configuration
-so ~/vimfiles/common.vim
+so ~/.config/vim/common.vim
 
 " IDE Actions
 " :actionlist
