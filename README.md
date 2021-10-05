@@ -5,7 +5,7 @@ Currently, I only retain configurations for:
 - NeoVim
 - IdeaVim
 
-I used to include Vim and GVim, but after trying NeoVim I found that maintaining them would be redundant.
+Support for Vim and GVim was shortly dropped after the inclusion of NeoVim, as I decided NeoVim was simpler to configure and rendered them redundant.
 
 ## Installation
 1. Ensure this repository is checked out into `~/.config`
