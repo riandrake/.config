@@ -9,11 +9,16 @@ Support for Vim and GVim was shortly dropped after the inclusion of NeoVim, as I
 
 ## Installation
 
-### Common
+### Common Setup
 1. Ensure this repository is checked out into `~/.config`
 2. Set `XDG_CONFIG_HOME` environment variable to `~/.config`
 
-### NeoVim
+### Additional IdeaVim Setup (if applicable)
+After following the steps in the previous section:
+1. Install the IdeaVim plugin
+2. Restart IDE
+
+### Additional NeoVim Setup (if applicable)
 After following the steps in the previous section:
 1. Install NeoVim (Chocolately recommended: `choco install neovim`)
 2. Open NeoVim
