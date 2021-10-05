@@ -23,13 +23,19 @@ After following the steps in the previous section:
 
 ### Common Configuration
 For settings that apply to every vim implementation:
-> ./common.vim
+```
+./common.vim
+```
 
 ### IdeaVim Configuration
 For settings that only apply to IdeaVim:
-> ./ideavim/ideavimrc
+```
+./ideavim/ideavimrc
+```
 
 ### NeoVim Configuration
 For settings that only apply to NeoVim:
-> ./nvim/init.vim
+```
+./nvim/init.vim
+```
 
