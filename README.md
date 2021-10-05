@@ -17,3 +17,24 @@ After following the steps in the previous section:
 2. Open NeoVim
 2. Execute `:PlugInstall`
 
+## Vim Configuration
+Vim configuration is split into 3 categories:
+
+- Common configuration
+- IdeaVim configuration
+- NeoVim configuration
+
+Every Vim implementation utilizes the "Common", but also have their own specific file(s) for managing implementation-specific details.
+
+### Common Configuration
+For settings that apply to every vim implementation:
+> ./common.vim
+
+### IdeaVim Configuration
+For settings that only apply to IdeaVim:
+> ./ideavim/ideavimrc
+
+### NeoVim Configuration
+For settings that only apply to NeoVim:
+> ./nvim/init.vim
+
