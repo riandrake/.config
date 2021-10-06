@@ -8,8 +8,8 @@ Currently, I only retain configurations for:
 ## Installation
 
 ### Common Setup
-1. Ensure this repository is checked out into `~/.config`
-2. Set `XDG_CONFIG_HOME` environment variable to `~/.config`
+1. Check out this repository (Default recommended: `~/.config`)
+2. Set the `XDG_CONFIG_HOME` environment variable to the location of this checkout
 
 ### Additional IdeaVim Setup (if applicable)
 After following the steps in the previous section:
