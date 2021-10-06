@@ -20,7 +20,8 @@ After following the steps in the previous section:
 After following the steps in the previous section:
 1. Install NeoVim (Chocolately recommended: `choco install neovim`)
 2. Open NeoVim
-2. Execute `:PlugInstall`
+3. Execute `:PlugInstall`
+4. (optional) Run the utility at: `./nvim/open_with_neovim.reg` to get right-click actions for "Open With NeoVim"
 
 ## Vim Configuration
 
