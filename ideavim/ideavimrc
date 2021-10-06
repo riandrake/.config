@@ -29,8 +29,8 @@ nnoremap <leader>p :action QuickImplementations<cr>
 nnoremap <leader>d :action ToggleDistractionFreeMode<cr>
 nnoremap <leader>7 :action BuildStartupProject<cr>
 nnoremap <leader>5 :action Debug<cr>
-nnoremap <a-h> :action NextTab<cr>
-nnoremap <a-j> :action PreviousTab<cr>
+nnoremap <a-h> :action PreviousTab<cr>
+nnoremap <a-l> :action NextTab<cr>
 nnoremap <a-q> :action CloseActiveTab<cr>
 nnoremap <a-s-q> :action CloseAllEditorsButActive<cr>
 nnoremap <c-s-q> :action ReopenClosedTab<cr>
