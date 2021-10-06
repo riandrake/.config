@@ -29,6 +29,11 @@ nnoremap <leader>p :action QuickImplementations<cr>
 nnoremap <leader>d :action ToggleDistractionFreeMode<cr>
 nnoremap <leader>7 :action BuildStartupProject<cr>
 nnoremap <leader>5 :action Debug<cr>
+nnoremap <a-h> :action NextTab<cr>
+nnoremap <a-j> :action PreviousTab<cr>
+nnoremap <a-q> :action CloseActiveTab<cr>
+nnoremap <a-s-q> :action CloseAllEditorsButActive<cr>
+nnoremap <c-s-q> :action ReopenClosedTab<cr>
 
 " Quick newline
 inoremap <C-j> <cr>
@@ -41,3 +46,4 @@ nnoremap <leader>B kddjdd
 map <C-t> :NERDTreeToggle<CR>
 " Navigate to current file in the Explorer tab
 map <C-S-t> :NERDTreeFind<CR>
+

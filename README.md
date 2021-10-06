@@ -11,6 +11,9 @@ Currently, I only retain configurations for:
 1. Check out this repository (Default recommended: `~/.config`)
 2. Set the `XDG_CONFIG_HOME` environment variable to the location of this checkout
 
+Warning: Use absolute path, rather than rely on `~` when using IdeaVim. IdeaVim doesn't seem to be able to handle it.
+e.g. `~/.config` should be entered as `C:/Users/user.name/.config`
+
 ### Additional IdeaVim Setup (if applicable)
 After following the steps in the previous section:
 1. Install the IdeaVim plugin

@@ -33,28 +33,25 @@ let g:python3_host_prog = 'C:\Program Files (x86)\Python39-32\python.exe'
 "========== [Common_Settings] =========="
 
 so ~/.config/common.vim
-set fileformats=dos
 
 "========== [Keymap_Settings] =========="
 
-" Comment line
-nmap <c-c> gcil
-vmap <c-c> gc
+" Split navigation
+nnoremap <a-h> <c-w><c-h>
+nnoremap <a-j> <c-w><c-j>
+nnoremap <a-k> <c-w><c-k>
+nnoremap <a-l> <c-w><c-l>
 
 "========== [GUI_Settings] =========="
+
+" Line endings
+set fileformats=dos
 
 " Disable JSON hiding characters
 let g:vim_json_syntax_conceal = 0
 
 " Redraw happens less often, not during macros
 set lazyredraw
-
-" Disable annoying beeps
-set belloff=all
-
-" Auto-indent tabs when adding new lines
-set autoindent
-set smartindent
 
 " Font
 let &guifont="JetBrains\ Mono:h10:cANSI"
@@ -72,10 +69,6 @@ syntax enable
 " No wrapped text
 set nowrap
 
-" Tab settings
-set tabstop=4
-set shiftwidth=4
-
 " Increased command history
 set history=200
 
@@ -92,11 +85,6 @@ augroup CSettings
     autocmd FileType cpp setlocal complete-=i
     autocmd FileType h setlocal complete-=i
 augroup END
-
-" Custom commenting via tpope/commentary plugin
-autocmd FileType c setlocal commentstring=//\ %s
-autocmd FileType cpp setlocal commentstring=//\ %s
-autocmd FileType h setlocal commentstring=//\ %s
 
 augroup python_file
     autocmd!

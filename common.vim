@@ -12,10 +12,18 @@ set nowrap
 " Use the system clipboard as the default register
 set clipboard=unnamed
 
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+
 " Search behaviour (/)
 set hlsearch
 set incsearch
 set smartcase
+
+" Auto-indent tabs when adding new lines
+set autoindent
+set smartindent
 
 " Preferred line numbers
 set number
@@ -35,16 +43,16 @@ nnoremap <space> <nop>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
-" Split navigation
-nnoremap <a-h> <c-w><c-h>
-nnoremap <a-j> <c-w><c-j>
-nnoremap <a-k> <c-w><c-k>
-nnoremap <a-l> <c-w><c-l>
+" Comment line
+nmap <c-c> gcil
+vmap <c-c> gc
 
-" buffer navigation
-nnoremap <silent> <a-h> :bprevious<cr>
-nnoremap <silent> <a-l> :bnext<cr>
+" Custom commenting via tpope/commentary plugin
+autocmd FileType c setlocal commentstring=//\ %s
+autocmd FileType cpp setlocal commentstring=//\ %s
+autocmd FileType h setlocal commentstring=//\ %s
 
 " No ping noises please
 set visualbell
 set noerrorbells
+set belloff=all
