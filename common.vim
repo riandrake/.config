@@ -19,7 +19,8 @@ set shiftwidth=4
 " Search behaviour (/)
 set hlsearch
 set incsearch
-set smartcase
+" set ignorecase <- I didn't like these two options after all (20/01/22)
+" set smartcase
 
 " Auto-indent tabs when adding new lines
 set autoindent

@@ -2,3 +2,4 @@
 vim/plugged/
 configstore/
 *.netrwhist
+jgit
