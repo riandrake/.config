@@ -27,7 +27,7 @@ nnoremap <leader>r :action RenameElement<cr>
 nnoremap <leader>g :action GotoDeclaration<cr>
 nnoremap <leader><o> :action GotoRelated<cr>
 nnoremap <leader><q> :action CloseActiveTab<cr>
-nnoremap <leader><z> :action ToggleZenMode<cr>
+nnoremap <leader><leader> :action ToggleZenMode<cr>
 nnoremap <a-h> :action PreviousTab<cr>
 nnoremap <a-l> :action NextTab<cr>
 nnoremap <a-s-q> :action CloseAllEditorsButActive<cr>
