@@ -13,6 +13,8 @@ set textobj-entire
 set ideajoin
 set NERDTree
 
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
 " https://github-wiki-see.page/m/JetBrains/ideavim/wiki/Select-mode
 set idearefactormode=keep
 
@@ -25,9 +27,9 @@ so ~/.config/common.vim
 "
 nnoremap <leader>r :action RenameElement<cr>
 nnoremap <leader>g :action GotoDeclaration<cr>
-nnoremap <leader><o> :action GotoRelated<cr>
-nnoremap <leader><q> :action CloseActiveTab<cr>
-nnoremap <leader><leader> :action ToggleZenMode<cr>
+nnoremap <leader><t> :action ActivateTerminalToolWindow<cr>
+nnoremap <a-o> :action GotoRelated<cr>
+nnoremap <a-q> :action CloseActiveTab<cr>
 nnoremap <a-h> :action PreviousTab<cr>
 nnoremap <a-l> :action NextTab<cr>
 nnoremap <a-s-q> :action CloseAllEditorsButActive<cr>
@@ -45,6 +47,7 @@ map <C-t> :NERDTreeToggle<CR>
 " Navigate to current file in the Explorer tab
 map <C-S-t> :NERDTreeFind<CR>
 
+" Set all IDE handlers to Vim
 sethandler <C-2> a:vim
 sethandler <C-S-2> a:vim
 sethandler <C-S-6> a:vim
