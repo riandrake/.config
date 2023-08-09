@@ -13,63 +13,88 @@ set textobj-entire
 set ideajoin
 set NERDTree
 
-nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
-
 " https://github-wiki-see.page/m/JetBrains/ideavim/wiki/Select-mode
 set idearefactormode=keep
 
 " Apply settings I use in every vim configuration
 so ~/.config/common.vim
 
+
+" open ideavimrc
+nnoremap \e :e ~/.config/ideavim/ideavimrc<CR>
+" reload vimrc
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
+nnoremap <C-n> :action GoToNextError<CR>
+nnoremap <C-p> :action GoToPreviousError<CR>
+
 " IDE Actions
 " :actionlist
 " :actionlist xyz
 "
-nnoremap <leader>r :action RenameElement<cr>
-nnoremap <leader>g :action GotoDeclaration<cr>
-nnoremap <leader><t> :action ActivateTerminalToolWindow<cr>
-nnoremap <a-o> :action GotoRelated<cr>
-nnoremap <a-q> :action CloseActiveTab<cr>
-nnoremap <a-h> :action PreviousTab<cr>
-nnoremap <a-l> :action NextTab<cr>
-nnoremap <a-s-q> :action CloseAllEditorsButActive<cr>
-nnoremap <c-s-q> :action ReopenClosedTab<cr>
+
+" Tab navigation
+nnoremap <C-h> :action PreviousTab<CR>
+nnoremap <C-l> :action NextTab<CR>
+
+" split management
+nnoremap <C-\> :action SplitVertically<CR>
+nnoremap <C--> :action SplitHorizontally<CR>
+nnoremap <C-=> :action Unsplit<CR>
+nnoremap <C-m> :action MoveEditorToOppositeTabGroup<CR>
+
+" window management
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>qa :action CloseAllEditors<CR>
+nnoremap <leader>qo :action CloseAllEditorsButActive<CR>
+nnoremap <leader>qr :action ReopenClosedTab<CR>
+
+nnoremap <leader>w :action SaveDocument<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>g :action GotoDeclaration<CR>
+nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+" Debugging
+nnoremap <F5> :action Run<CR>
+nnoremap <S-F5> :action Debug<CR>
+nnoremap <F9> :action ToggleLineBreakpoint<CR>
+
+nnoremap <F10> :action Step<CR>
+sethandler <F10> a:vim
+
+nnoremap <F11> :action StepInto<CR>
+nnoremap <S-F11> :action StepOut<CR>
+
+nnoremap <A-o> :action GotoRelated<CR>
 
 " Quick newline
-inoremap <C-j> <cr>
-
-" Switch brackets on/off around one-line if-statements
-nnoremap <leader>b O{<esc>jo<c-d>}<esc>
-nnoremap <leader>B kddjdd
-
-" Toggle focus to the Explorer tab
-map <C-t> :NERDTreeToggle<CR>
-" Navigate to current file in the Explorer tab
-map <C-S-t> :NERDTreeFind<CR>
+inoremap <C-j> <CR>
 
 " Set all IDE handlers to Vim
 sethandler <C-2> a:vim
 sethandler <C-S-2> a:vim
 sethandler <C-S-6> a:vim
-sethandler <C-A> a:vim
-sethandler <C-B> a:vim
-sethandler <C-D> a:vim
-sethandler <C-E> a:vim
-sethandler <C-F> a:vim
-sethandler <C-G> a:vim
-sethandler <C-H> a:vim
-sethandler <C-I> a:vim
-sethandler <C-J> a:vim
-sethandler <C-K> a:vim
-sethandler <C-L> a:vim
-sethandler <C-M> a:vim
-sethandler <C-N> a:vim
-sethandler <C-O> a:vim
-sethandler <C-P> a:vim
-sethandler <C-S-Q> a:vim
-sethandler <A-S-Q> a:vim
-sethandler <C-R> a:vim
-sethandler <C-S> a:vim
-sethandler <C-T> a:vim
-sethandler <C-V> a:vim
-sethandler <C-W> a:vim
+sethandler <C-a> a:vim
+sethandler <C-b> a:vim
+sethandler <C-d> a:vim
+sethandler <C-e> a:vim
+sethandler <C-f> a:vim
+sethandler <C-g> a:vim
+sethandler <C-h> a:vim
+sethandler <C-i> a:vim
+sethandler <C-j> a:vim
+sethandler <C-k> a:vim
+sethandler <C-l> a:vim
+sethandler <C-l> a:vim
+sethandler <C-m> a:vim
+sethandler <C-n> a:vim
+sethandler <C-o> a:vim
+sethandler <C-p> a:vim
+sethandler <C-Q> a:vim
+sethandler <A-Q> a:vim
+sethandler <C-r> a:vim
+sethandler <C-s> a:vim
+sethandler <C-t> a:vim
+sethandler <C-v> a:vim
+sethandler <C-w> a:vim
+sethandler <S-TAB> a:vim

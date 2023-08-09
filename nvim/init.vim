@@ -18,7 +18,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'cespare/vim-toml'
-Plug 'joshdick/onedark.vim'
+Plug 'NoahTheDuke/vim-just'
 
 let PYTHONUNBUFFERED=1
 let g:airline#extensions#tabline#enabled = 0
