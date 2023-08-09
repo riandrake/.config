@@ -4,8 +4,6 @@
 nnoremap <esc> :noh<return><esc>
 
 " Preferred colorscheme
-color onedark
-
 " Never wrap text
 set nowrap
 
