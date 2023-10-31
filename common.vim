@@ -1,4 +1,9 @@
 " Common settings I use across all configurations (vim, gvim, neovim, ideavim etc)
+"
+colorscheme industry
+
+" Default backspace behaviour (no backspace in insert mode)
+set backspace=
 
 " press escape to clear search highlight
 nnoremap <esc> :noh<return><esc>
@@ -6,6 +11,10 @@ nnoremap <esc> :noh<return><esc>
 " Preferred colorscheme
 " Never wrap text
 set nowrap
+
+" Unix line endings
+set ff=unix
+set fileformat=unix
 
 " Use the system clipboard as the default register
 set clipboard=unnamed
@@ -32,7 +41,7 @@ set relativenumber
 set scrolloff=5
 
 " Highlight the line the cursor is on
-set cursorline
+" set cursorline
 
 " Preferred leader key (spacebar)
 let mapleader=" "

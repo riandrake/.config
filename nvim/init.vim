@@ -18,21 +18,24 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'cespare/vim-toml'
+Plug 'folke/tokyonight.nvim', { 'branch' : 'main' }
 Plug 'NoahTheDuke/vim-just'
+Plug 'udalov/kotlin-vim'
 
 let PYTHONUNBUFFERED=1
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_theme='wombat'
+let g:airline_theme='zenburn'
 let g:asyncrun_open = 15
 let g:asyncrun_open = 20
 call plug#end()"
 
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = 'C:\Program Files (x86)\Python39-32\python.exe'
+let g:python3_host_prog = 'python'
 
 "========== [Common_Settings] =========="
 
 so ~/.config/common.vim
+colorscheme default
 
 "========== [Keymap_Settings] =========="
 
@@ -45,7 +48,7 @@ nnoremap <a-l> <c-w><c-l>
 "========== [GUI_Settings] =========="
 
 " Line endings
-set fileformats=dos
+set fileformats=unix
 
 " Disable JSON hiding characters
 let g:vim_json_syntax_conceal = 0
