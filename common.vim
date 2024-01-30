@@ -5,6 +5,9 @@ colorscheme industry
 " Default backspace behaviour (no backspace in insert mode)
 set backspace=
 
+" Disable the mouse
+set mouse=
+
 " press escape to clear search highlight
 nnoremap <esc> :noh<return><esc>
 
@@ -50,6 +53,9 @@ nnoremap <space> <nop>
 " Quick save/quit
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+
+" Quick paste in insert mode
+inoremap <c-p> <c-r>"
 
 " Comment line
 nmap <c-c> gcil

@@ -12,6 +12,11 @@ set exchange
 set textobj-entire
 set ideajoin
 set NERDTree
+set sneak
+set quickscope
+
+" quickscope setup
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " https://github-wiki-see.page/m/JetBrains/ideavim/wiki/Select-mode
 set idearefactormode=keep
@@ -34,8 +39,8 @@ nnoremap <C-p> :action GoToPreviousError<CR>
 "
 
 " Tab navigation
-nnoremap <C-h> :action PreviousTab<CR>
 nnoremap <C-l> :action NextTab<CR>
+nnoremap <C-h> :action PreviousTab<CR>
 
 " split management
 nnoremap <C-\> :action SplitVertically<CR>
@@ -53,6 +58,9 @@ nnoremap <leader>w :action SaveDocument<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>g :action GotoDeclaration<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
+
+nnoremap <leader>e :action GotoNextError\|ShowErrorDescription<CR>
+nnoremap <leader>p :action GotoPreviousError\|ShowErrorDescription<CR>
 
 " Debugging
 nnoremap <F5> :action Run<CR>
