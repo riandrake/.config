@@ -1,1 +1,11 @@
 *
+
+!nvim/
+!nvim/**
+nvim/pack
+
+!ideavim/
+!ideavim/**
+
+!common.vim
+!README.md
