@@ -49,7 +49,7 @@ nnoremap <leader>qr :action ReopenClosedTab<CR>
 nnoremap <leader>w :action SaveDocument<CR>
 nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
-nnoremap <c-space> :NERDTree<CR>
+nnoremap <c-tab> :NERDTree<CR>
 
 nnoremap <leader>g :action GotoDeclaration<CR>
 nnoremap <leader>e :action GotoNextError\|ShowErrorDescription<CR>
