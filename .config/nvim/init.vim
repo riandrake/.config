@@ -34,7 +34,7 @@ let g:python3_host_prog = 'python'
 
 "========== [Common_Settings] =========="
 
-so ~/.config/common.vim
+so ~/common.vim
 colorscheme default
 
 "========== [Keymap_Settings] =========="
