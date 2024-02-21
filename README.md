@@ -1,15 +1,12 @@
 ## Description
-This repository contains all of the configuration needed for my vim environment, but can be expanded in the future to include configurations for other programs.
-
-Currently, I only retain configurations for:
-- NeoVim
-- IdeaVim
+This repository contains all of the configuration needed for setting up my dotfile environment, using stow.
 
 ## Installation
 
 ### Common Setup
-1. Check out this repository (Default recommended: `~/.config`)
-2. Set the `XDG_CONFIG_HOME` environment variable to the location of this checkout
+1. Check out this repository (Default recommended: `~/dotfiles`)
+2. Install stow, and run `stow` in the repostitory directory.
+3. Set the `XDG_CONFIG_HOME` environment variable to the location of the symlinked `~/.config` folder
 
 Warning: Use absolute path, rather than rely on `~` when using IdeaVim. IdeaVim doesn't seem to be able to handle it.
 e.g. `~/.config` should be entered as `C:/Users/user.name/.config`
