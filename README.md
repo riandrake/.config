@@ -5,7 +5,7 @@ This repository contains all of the configuration needed for setting up my dotfi
 
 ### Common Setup
 1. Check out this repository (Default recommended: `~/dotfiles`)
-2. Install stow, and run `stow` in the repostitory directory.
+2. Install stow, and run `stow .` in the repostitory directory.
 3. Set the `XDG_CONFIG_HOME` environment variable to the location of the symlinked `~/.config` folder
 
 Warning: Use absolute path, rather than rely on `~` when using IdeaVim. IdeaVim doesn't seem to be able to handle it.
