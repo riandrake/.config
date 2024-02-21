@@ -54,6 +54,7 @@ nnoremap <c-tab> :NERDTree<CR>
 nnoremap <leader>g :action GotoDeclaration<CR>
 nnoremap <leader>e :action GotoNextError\|ShowErrorDescription<CR>
 nnoremap <leader>p :action GotoPreviousError\|ShowErrorDescription<CR>
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
 
 " Debugging
 nnoremap <F5> :action Run<CR>
