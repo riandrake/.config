@@ -2,7 +2,7 @@
 " https://github.com/JetBrains/ideavim
 
 " Apply settings I use in every vim configuration
-so ~/.config/common.vim
+so ~/dotfiles/common.vim
 
 " Plugins supported by IdeaVim
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
