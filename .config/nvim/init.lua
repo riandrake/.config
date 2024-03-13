@@ -102,6 +102,8 @@ local plugins = {
 
   { "NoahTheDuke/vim-just" },
 
+  { "lervag/wiki.vim" },
+
 	-- Gruvbox theme with Treesitter support
 	{ "ellisonleao/gruvbox.nvim" },
 
@@ -412,3 +414,6 @@ vim.filetype.add({
 
 -- Set font
 vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
+
+-- Vim notes
+vim.g.wiki_root = "~/notes"
