@@ -423,7 +423,7 @@ vim.filetype.add({
 })
 
 -- Set font
-vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
+vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 
 -- Vim notes
 vim.g.wiki_root = "~/notes"
