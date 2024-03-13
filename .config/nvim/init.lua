@@ -102,15 +102,24 @@ local plugins = {
 
   { "NoahTheDuke/vim-just" },
 
-  { "lervag/wiki.vim" },
+  { "preservim/vim-markdown" },
+
+  {
+      'jakewvincent/mkdnflow.nvim',
+      config = function()
+          require('mkdnflow').setup({
+              -- Config goes here; leave blank for defaults
+          })
+      end
+  },
 
 	-- Gruvbox theme with Treesitter support
 	{ "ellisonleao/gruvbox.nvim" },
 
 	-- Used by LuaLine and nvim-tree
 	{
-		"nvim-tree/nvim-web-devicons",
-		lazy = true,
+	"nvim-tree/nvim-web-devicons",
+	lazy = true,
 	},
 
 	-- Pretty indentation lines
@@ -286,6 +295,7 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"latex",
 		"markdown",
+		"markdown_inline",
 		"terraform",
 		"yaml",
 	},
@@ -417,3 +427,4 @@ vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h10" }
 
 -- Vim notes
 vim.g.wiki_root = "~/notes"
+vim.opt.conceallevel = 2
