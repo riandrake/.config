@@ -428,3 +428,7 @@ vim.opt.guifont = { "JetBrainsMono Nerd Font", ":h12" }
 -- Vim notes
 vim.g.wiki_root = "~/notes"
 vim.opt.conceallevel = 2
+
+-- Copilot configuration
+vim.g.copilot_no_tab_map = true
+vim.api.vim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
