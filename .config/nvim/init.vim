@@ -21,6 +21,8 @@ Plug 'cespare/vim-toml'
 Plug 'folke/tokyonight.nvim', { 'branch' : 'main' }
 Plug 'NoahTheDuke/vim-just'
 Plug 'udalov/kotlin-vim'
+Plug 'nvim-neorg/neorg'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 let PYTHONUNBUFFERED=1
 let g:airline#extensions#tabline#enabled = 0
@@ -93,3 +95,5 @@ augroup python_file
     autocmd!
     autocmd FileType python nnoremap <c-s-b> :AsyncRun python -u "%"<CR>
 augroup END
+
+lua require('setup')
