@@ -96,4 +96,18 @@ augroup python_file
     autocmd FileType python nnoremap <c-s-b> :AsyncRun python -u "%"<CR>
 augroup END
 
-lua require('setup')
+lua << EOF
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {}, -- Loads default behaviour
+        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+                workspaces = {
+                    notes = "~/notes",
+                },
+            },
+        },
+    },
+}
+EOF
