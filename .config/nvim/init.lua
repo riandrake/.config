@@ -113,8 +113,8 @@ local plugins = {
       end
   },
 
-	-- Gruvbox theme with Treesitter support
-	{ "ellisonleao/gruvbox.nvim" },
+	-- Color theme
+	{ "folke/tokyonight.nvim" },
 
 	-- Used by LuaLine and nvim-tree
 	{
@@ -218,7 +218,7 @@ require("lazy").setup(plugins)
 -- -----------------------------------------------------------------------------------------------
 -- Plugin config
 -- -----------------------------------------------------------------------------------------------
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme tokyonight-night")
 
 require("nvim-tree").setup()
 
