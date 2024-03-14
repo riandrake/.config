@@ -1,5 +1,6 @@
 return {
 	"jakewvincent/mkdnflow.nvim",
+	lazy = false,
 	config = function()
 		require("mkdnflow").setup({
 			lazy = false,
