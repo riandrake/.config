@@ -1,5 +1,5 @@
 # Set the editor that notes are opened with
-EDITOR=neovide
+EDITOR=nvim
 # Change the quicknote format to get rid of the word "quicknote"
 QUICKNOTE_FORMAT="%Y-%m-%d"
 # Set extension to plain txt instead of markdown
