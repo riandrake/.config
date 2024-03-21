@@ -56,7 +56,7 @@ return {
                     opts = { noremap = false, expr = true, buffer = true },
                 },
                 -- Toggle check-boxes.
-                ["<leader>ch"] = {
+                ["<leader>n<space>"] = {
                     action = function()
                         return require("obsidian").util.toggle_checkbox()
                     end,
@@ -67,7 +67,7 @@ return {
             -- Where to put new notes. Valid options are
             --  * "current_dir" - put new notes in same directory as the current buffer.
             --  * "notes_subdir" - put new notes in the default notes subdirectory.
-            new_notes_location = "notes_subdir",
+            new_notes_location = "current_dir",
 
             -- Optional, customize how note IDs are generated given an optional title.
             ---@param title string|?
@@ -86,7 +86,7 @@ return {
                         suffix = suffix .. string.char(math.random(65, 90))
                     end
                 end
-                return tostring(os.time()) .. "-" .. suffix
+                return suffix .. "-" .. os.date("%Y-%m-%d")
             end,
 
             -- Optional, customize how note file names are generated given the ID, target directory, and title.
@@ -286,13 +286,15 @@ return {
             },
         })
 
-        vim.keymap.set("n", "<leader>nt", ":ObsidianTags<CR>")
-        vim.keymap.set("n", "<leader>nn", ":ObsidianToday<CR>")
+        vim.keymap.set("n", "<leader>ng", ":ObsidianTags<CR>")
+        vim.keymap.set("n", "<leader>nt", ":ObsidianToday<CR>")
+        vim.keymap.set("n", "<leader>nn", ":ObsidianNew ")
         vim.keymap.set("n", "<leader>nd", ":ObsidianDailies<CR>")
         vim.keymap.set("n", "<leader>ne", ":ObsidianTemplate<CR>")
         vim.keymap.set("n", "<leader>no", ":ObsidianQuickSwitch<CR>")
         vim.keymap.set("n", "<leader>np", ":ObsidianOpen<CR>")
         vim.keymap.set("n", "<leader>nr", ":ObsidianRename<CR>")
         vim.keymap.set("n", "<leader>ns", ":ObsidianSearch<CR>")
+        vim.keymap.set("n", "<leader>nx", ":ObsidianSearch<CR>")
     end,
 }
