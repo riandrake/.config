@@ -15,4 +15,4 @@ vim.keymap.set("n", "<C-w>j", ":resize -15<CR>")
 vim.keymap.set("n", "<C-w>h", ":vertical:resize -15<CR>")
 vim.keymap.set("n", "<C-w>l", ":vertical:resize +15<CR>")
 
-vim.keymap.set("n", "<leader>ww", ":ObsidianWorkspace work")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
