@@ -295,6 +295,6 @@ return {
         vim.keymap.set("n", "<leader>np", ":ObsidianOpen<CR>")
         vim.keymap.set("n", "<leader>nr", ":ObsidianRename<CR>")
         vim.keymap.set("n", "<leader>ns", ":ObsidianSearch<CR>")
-        vim.keymap.set("n", "<leader>nx", ":ObsidianSearch<CR>")
+        vim.keymap.set("n", "<leader>nb", ":ObsidianBacklinks<CR>")
     end,
 }
