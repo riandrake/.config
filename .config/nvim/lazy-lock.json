@@ -27,6 +27,7 @@
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "2200900e3c1aae21dadb65c2ea2e91bcc39ca368" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27" },
   "telescope.nvim": { "branch": "master", "commit": "776b509f80dd49d8205b9b0d94485568236d1192" },
+  "vim-barbaric": { "branch": "master", "commit": "bb4bef87417fc3ad92319f556f02d6658b401288" },
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-indent-object": { "branch": "master", "commit": "8ab36d5ec2a3a60468437a95e142ce994df598c6" },
   "vim-just": { "branch": "main", "commit": "364e35e0b01787c8328689e09ed79218d8f7b49d" },

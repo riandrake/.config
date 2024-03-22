@@ -39,6 +39,8 @@ local options = {
 	list = true,
 	guifont = { "JetBrainsMono Nerd Font", ":h12" },
 	conceallevel = 2,
+	iminsert = 1,
+	imsearch = 1,
 }
 
 for opt, val in pairs(options) do
