@@ -51,7 +51,7 @@ nnoremap <leader>r :action RenameElement<CR>
 nnoremap <leader>t :action ActivateTerminalToolWindow<CR>
 nnoremap <c-tab> :NERDTree<CR>
 
-nnoremap <M-S-O> :action GotoFile<CR>
+nnoremap <D-S-O> :action GotoFile<CR>
 nnoremap <leader>g :action GotoDeclaration<CR>
 nnoremap <leader>e :action GotoNextError\|ShowErrorDescription<CR>
 nnoremap <leader>p :action GotoPreviousError\|ShowErrorDescription<CR>
