@@ -17,7 +17,8 @@ if [ $? -ne 0 ]; then
   arr=($(echo $2 | tr ':' "\n"))
   file=${arr[0]}
   lineno=${arr[1]:-$3}
-  colno=${arr[2]:-${3##*:}}
+  colno=${arr[2]:-$4}
+  #colno=${arr[2]:-${3##*:}}
   [ -e "$file" ] || file=${pwd}/${file}
 fi
 
@@ -25,5 +26,5 @@ file "$file" | grep -q "text"
 if [ $? -ne 0 ]; then
   /usr/bin/open $file
 else
-  nvim ${file}${lineno:+:${lineno}}${colno:+:${colno}}
+  nvim +call\ cursor\(${lineno},${colno}\) "${file}"
 fi
