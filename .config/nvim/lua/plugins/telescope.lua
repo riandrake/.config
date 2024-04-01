@@ -8,7 +8,11 @@ return {
 		"nvim-telescope/telescope.nvim",
 		lazy = false,
 		tag = "0.1.2",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/popup.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope-fzy-native.nvim",
+		},
 		config = function()
 			local tele_builtin = require("telescope.builtin")
 			-- vim.keymap.set("n", "<leader>ff", tele_builtin.git_files, {})
