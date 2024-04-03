@@ -7,7 +7,7 @@ return {
         "BufReadPre "
         .. vim.fn.expand("~")
         .. "/Users/rian.drake/Documents/notes",
-        "BufNewFile " .. vim.fn.expand("~") .. "/Users/rian.drake/Documents/notes",
+        "BufNewFile " .. vim.fn.expand("~") .. "/Users/rian.drake/Documents/obsidian",
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -17,8 +17,12 @@ return {
         require("obsidian").setup({
             workspaces = {
                 {
-                    name = "notes",
-                    path = "/Users/rian.drake/Documents/notes",
+                    name = "work",
+                    path = "/Users/rian.drake/Documents/obsidian/work",
+                },
+                {
+                    name = "personal",
+                    path = "/Users/rian.drake/Documents/obsidian/personal",
                 },
             },
 
@@ -296,5 +300,6 @@ return {
         vim.keymap.set("n", "<leader>nr", ":ObsidianRename<CR>")
         vim.keymap.set("n", "<leader>ns", ":ObsidianSearch<CR>")
         vim.keymap.set("n", "<leader>nb", ":ObsidianBacklinks<CR>")
+        vim.keymap.set("n", "<leader>nw", ":ObsidianWorkspace<CR>")
     end,
 }

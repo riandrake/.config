@@ -17,14 +17,14 @@ gui:
       - white
       - bold
     inactiveBorderColor:
-      - grey
+      - black
     searchingActiveBorderColor:
       - black
       - bold
     optionsTextColor:
       - white
     selectedLineBgColor:
-      - default
+      - white
     cherryPickedCommitBgColor:
       - black
     cherryPickedCommitFgColor:

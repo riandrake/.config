@@ -23,6 +23,10 @@ set matchit
 set quickscope
 set ideajoin
 
+" set leader to space
+let mapleader = "\<Space>"
+let g:ideavim_use_ctrl_keys = 1
+
 " quickscope setup
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
