@@ -90,7 +90,7 @@ return {
                         suffix = suffix .. string.char(math.random(65, 90))
                     end
                 end
-                return suffix .. "-" .. os.date("%Y-%m-%d")
+                return suffix -- .. "-" .. os.date("%Y-%m-%d")
             end,
 
             -- Optional, customize how note file names are generated given the ID, target directory, and title.
