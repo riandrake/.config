@@ -41,6 +41,7 @@ local options = {
     conceallevel = 2,
     iminsert = 1,
     imsearch = 1,
+    shortmess = "I",
 }
 
 for opt, val in pairs(options) do
