@@ -1,3 +1,5 @@
+obsidian = "/Users/rian.drake/Library/Mobile Documents/iCloud~md~obsidian/Documents/"
+
 return {
     "epwalsh/obsidian.nvim",
     lazy = false,
@@ -6,8 +8,8 @@ return {
         -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
         "BufReadPre "
         .. vim.fn.expand("~")
-        .. "/Users/rian.drake/Documents/notes",
-        "BufNewFile " .. vim.fn.expand("~") .. "/Users/rian.drake/Documents/obsidian",
+        .. obsidian,
+        "BufNewFile " .. vim.fn.expand("~") .. obsidian,
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -18,11 +20,15 @@ return {
             workspaces = {
                 {
                     name = "work",
-                    path = "/Users/rian.drake/Documents/obsidian/work",
+                    path = obsidian .. "work",
                 },
                 {
                     name = "personal",
-                    path = "/Users/rian.drake/Documents/obsidian/personal",
+                    path = obsidian .. "personal",
+                },
+                {
+                    name = "dev",
+                    path = obsidian .. "dev",
                 },
             },
 
@@ -34,7 +40,7 @@ return {
                 -- Optional, if you keep daily notes in a separate directory.
                 folder = "dailies",
                 -- Optional, if you want to change the date format for the ID of daily notes.
-                date_format = "%Y-%m-%d",
+                date_format = "%Y/%m %B/%Y-%m-%d",
                 -- Optional, if you want to change the date format of the default alias of daily notes.
                 alias_format = "%B %-d, %Y",
                 -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'

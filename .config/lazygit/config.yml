@@ -17,7 +17,7 @@ gui:
       - white
       - bold
     inactiveBorderColor:
-      - black
+      - grey
     searchingActiveBorderColor:
       - black
       - bold
