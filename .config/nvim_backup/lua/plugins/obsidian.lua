@@ -23,8 +23,8 @@ return {
                     path = obsidian .. "work",
                 },
                 {
-                    name = "personal",
-                    path = obsidian .. "personal",
+                    name = "japanese",
+                    path = obsidian .. "japanese",
                 },
                 {
                     name = "dev",
@@ -38,7 +38,7 @@ return {
 
             daily_notes = {
                 -- Optional, if you keep daily notes in a separate directory.
-                folder = "dailies",
+                folder = "_/dailies",
                 -- Optional, if you want to change the date format for the ID of daily notes.
                 date_format = "%Y/%m %B/%Y-%m-%d",
                 -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -160,7 +160,7 @@ return {
 
             -- Optional, for templates (see below).
             templates = {
-                subdir = "templates",
+                subdir = "_/templates",
                 date_format = "%Y-%m-%d",
                 time_format = "%H:%M",
                 -- A map for custom variables, the key should be the variable and the value a function
