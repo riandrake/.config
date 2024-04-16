@@ -22,6 +22,8 @@ set matchit
 set quickscope
 set ideajoin
 
+set scrolloff = 999
+
 " set leader to space
 let mapleader = "\<Space>"
 let g:ideavim_use_ctrl_keys = 1

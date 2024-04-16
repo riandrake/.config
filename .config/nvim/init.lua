@@ -98,6 +98,8 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+vim.opt.conceallevel = 2
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -152,7 +154,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 9999
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -257,6 +259,45 @@ require('lazy').setup({
       vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<CR>')
       vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>')
       vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>')
+    end,
+  },
+
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local harpoon = require 'harpoon'
+
+      harpoon:setup()
+
+      ---- basic telescope configuration
+      local conf = require('telescope.config').values
+      local function toggle_telescope(harpoon_files)
+        local file_paths = {}
+        for _, item in ipairs(harpoon_files.items) do
+          table.insert(file_paths, item.value)
+        end
+
+        require('telescope.pickers')
+          .new({}, {
+            prompt_title = 'Harpoon',
+            finder = require('telescope.finders').new_table {
+              results = file_paths,
+            },
+            previewer = conf.file_previewer {},
+            sorter = conf.generic_sorter {},
+          })
+          :find()
+      end
+
+      vim.keymap.set('n', '<leader>ho', function()
+        toggle_telescope(harpoon:list())
+      end, { desc = 'Open harpoon window' })
+
+      vim.keymap.set('n', '<leader>ha', function()
+        harpoon:list():add()
+      end)
     end,
   },
 
@@ -947,7 +988,7 @@ require('lazy').setup({
         -- Where to put new notes. Valid options are
         --  * "current_dir" - put new notes in same directory as the current buffer.
         --  * "notes_subdir" - put new notes in the default notes subdirectory.
-        new_notes_location = 'current_dir',
+        new_notes_location = 'notes_subdir',
 
         -- Optional, customize how note IDs are generated given an optional title.
         ---@param title string|?
@@ -966,7 +1007,7 @@ require('lazy').setup({
               suffix = suffix .. string.char(math.random(65, 90))
             end
           end
-          return suffix -- .. "-" .. os.date("%Y-%m-%d")
+          return 'inbox/' .. suffix -- .. '-' .. os.date '%Y%m%d%H%M'
         end,
 
         -- Optional, customize how note file names are generated given the ID, target directory, and title.

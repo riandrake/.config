@@ -46,12 +46,12 @@ gui:
   showPanelJumps: true # for showing the jump-to-panel keybindings as panel subtitles
   showCommandLog: true
   showIcons: false # deprecated: use nerdFontsVersion instead
-  nerdFontsVersion: "" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
+  nerdFontsVersion: "3" # nerd fonts version to use ("2" or "3"); empty means don't show nerd font icons
   showFileIcons: true # for hiding file icons in the file views
   commandLogSize: 8
   splitDiff: 'auto' # one of 'auto' | 'always'
   skipRewordInEditorWarning: false # for skipping the confirmation before launching the reword editor
-  border: 'rounded' # one of 'single' | 'double' | 'rounded' | 'hidden'
+  border: 'single' # one of 'single' | 'double' | 'rounded' | 'hidden'
   animateExplosion: true # shows an explosion animation when nuking the working tree
   portraitMode: 'auto' # one of 'auto' | 'never' | 'always'
   filterMode: 'substring' # one of 'substring' | 'fuzzy'; see 'Filtering' section below
@@ -86,7 +86,7 @@ git:
   # The main branches. We colour commits green if they belong to one of these branches,
   # so that you can easily see which commits are unique to your branch (coloured in yellow)
   mainBranches: [master, main]
-  autoFetch: true
+  autoFetch: false
   autoRefresh: true
   fetchAll: true # Pass --all flag when running git fetch. Set to false to fetch only origin (or the current branch's upstream remote if there is one)
   branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
@@ -113,7 +113,7 @@ confirmOnQuit: false
 # determines whether hitting 'esc' will quit the application when there is nothing to cancel/close
 quitOnTopLevelReturn: false
 disableStartupPopups: false
-notARepository: 'prompt' # one of: 'prompt' | 'create' | 'skip' | 'quit'
+notARepository: 'quit' # one of: 'prompt' | 'create' | 'skip' | 'quit'
 promptToReturnFromSubprocess: true # display confirmation when subprocess terminates
 keybinding:
   universal:
