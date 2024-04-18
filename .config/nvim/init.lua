@@ -216,7 +216,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- Obsidian Folder
-obsidian = '/Users/rian.drake/Library/Mobile Documents/iCloud~md~obsidian/Documents/'
+obsidian = '/Users/rian.drake/projects/obsidian/vault/'
 
 -- [[ Configure and install plugins ]]
 --
@@ -260,6 +260,23 @@ require('lazy').setup({
       vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>')
       vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>')
     end,
+  },
+
+  {
+    'jackMort/ChatGPT.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('chatgpt').setup {
+        api_key_cmd = 'echo $OPENAI_API_KEY',
+        api_host_cmd = 'echo -n api.openai.com',
+      }
+    end,
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'folke/trouble.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
   },
 
   {
@@ -602,10 +619,10 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        pyright = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -930,16 +947,8 @@ require('lazy').setup({
       require('obsidian').setup {
         workspaces = {
           {
-            name = 'work',
-            path = obsidian .. 'work',
-          },
-          {
-            name = 'japanese',
-            path = obsidian .. 'japanese',
-          },
-          {
-            name = 'dev',
-            path = obsidian .. 'dev',
+            name = 'dev-personal',
+            path = obsidian,
           },
         },
 
