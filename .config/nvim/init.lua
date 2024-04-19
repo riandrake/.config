@@ -169,6 +169,10 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Markdown helper
+vim.keymap.set('n', '<leader>k', 'ciw[[<c-r>*]]<esc>')
+vim.keymap.set('v', '<leader>k', 'c[[<c-r>*]]<esc>')
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -194,6 +198,13 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+
+-- Replace expressions with datetime
+vim.cmd [[
+  iab <expr> ddate strftime("%Y-%m-%d")
+  iab <expr> ttime strftime("%H:%M")
+  iab <expr> ptime strftime("%l:%M%p")
+]]
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -238,7 +249,7 @@ require('lazy').setup({
   'kshenoy/vim-signature',
   'christoomey/vim-sort-motion',
   'NoahTheDuke/vim-just',
-  'rlue/vim-barbaric',
+  -- 'rlue/vim-barbaric',
   'lukas-reineke/indent-blankline.nvim',
 
   -- NOTE: Plugins can also be added by using a table,
@@ -1030,7 +1041,7 @@ require('lazy').setup({
               suffix = suffix .. string.char(math.random(65, 90))
             end
           end
-          return 'inbox/' .. suffix -- .. '-' .. os.date '%Y%m%d%H%M'
+          return os.date '%y%m%d%H%M' .. '-' .. suffix
         end,
 
         -- Optional, customize how note file names are generated given the ID, target directory, and title.
@@ -1038,7 +1049,7 @@ require('lazy').setup({
         ---@return string|obsidian.Path The full path to the new note.
         note_path_func = function(spec)
           -- This is equivalent to the default behavior.
-          local path = spec.dir / tostring(spec.id)
+          local path = spec.dir / 'inbox' / tostring(spec.id)
           return path:with_suffix '.md'
         end,
 
