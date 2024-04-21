@@ -1,7 +1,8 @@
 " IDEAVIMRC
 " https://github.com/JetBrains/ideavim
 
-set clipboard=unnamedplus
+set clipboard+=ideaput
+set clipboard+=unnamed
 
 " Plugins supported by IdeaVim
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins

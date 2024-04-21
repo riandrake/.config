@@ -253,3 +253,6 @@ eval "$(zoxide init zsh)"
 source ~/dotfiles/openai
 
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
+
+eval $(thefuck --alias)
+eval $(thefuck --alias f)
