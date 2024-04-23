@@ -154,7 +154,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 9999
+vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -251,6 +251,18 @@ require('lazy').setup({
   'NoahTheDuke/vim-just',
   -- 'rlue/vim-barbaric',
   'lukas-reineke/indent-blankline.nvim',
+
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+
+    config = function()
+      require('oil').setup()
+      vim.keymap.set('n', '-', ':Oil<CR>')
+    end,
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -972,7 +984,7 @@ require('lazy').setup({
       require('obsidian').setup {
         workspaces = {
           {
-            name = 'dev-personal',
+            name = 'riandrake',
             path = obsidian,
           },
         },
@@ -983,7 +995,7 @@ require('lazy').setup({
 
         daily_notes = {
           -- Optional, if you keep daily notes in a separate directory.
-          folder = '_/dailies',
+          folder = '_/calendar',
           -- Optional, if you want to change the date format for the ID of daily notes.
           date_format = '%Y/%m %B/%Y-%m-%d',
           -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -1027,22 +1039,22 @@ require('lazy').setup({
         -- Optional, customize how note IDs are generated given an optional title.
         ---@param title string|?
         ---@return string
-        note_id_func = function(title)
-          -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-          -- In this case a note with the title 'My new note' will be given an ID that looks
-          -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-          local suffix = ''
-          if title ~= nil then
-            -- If title is given, transform it into valid file name.
-            suffix = title:gsub(' ', '-'):gsub('[^A-Za-z0-9-]', ''):lower()
-          else
-            -- If title is nil, just add 4 random uppercase letters to the suffix.
-            for _ = 1, 4 do
-              suffix = suffix .. string.char(math.random(65, 90))
-            end
-          end
-          return os.date '%y%m%d%H%M' .. '-' .. suffix
-        end,
+        --note_id_func = function(title)
+        -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+        -- In this case a note with the title 'My new note' will be given an ID that looks
+        -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+        -- local suffix = ''
+        -- if title ~= nil then
+        -- If title is given, transform it into valid file name.
+        -- suffix = title:gsub(' ', '-'):gsub('[^A-Za-z0-9-]', ''):lower()
+        -- else
+        -- If title is nil, just add 4 random uppercase letters to the suffix.
+        -- for _ = 1, 4 do
+        -- suffix = suffix .. string.char(math.random(65, 90))
+        -- end
+        -- end
+        -- return os.date '%y%m%d%H%M' .. '-' .. suffix
+        --end,
 
         -- Optional, customize how note file names are generated given the ID, target directory, and title.
         ---@param spec { id: string, dir: obsidian.Path, title: string|? }
@@ -1080,7 +1092,7 @@ require('lazy').setup({
 
         -- Optional, boolean or a function that takes a filename and returns a boolean.
         -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
-        disable_frontmatter = false,
+        disable_frontmatter = true,
 
         -- Optional, alternatively you can customize the frontmatter data.
         ---@return table
