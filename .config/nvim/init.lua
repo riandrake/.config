@@ -227,7 +227,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- Obsidian Folder
-obsidian = '/Users/rian.drake/projects/obsidian/vault/'
+obsidian = '/Users/rian.drake/projects/riandrake.xyz/content/'
 
 -- [[ Configure and install plugins ]]
 --
@@ -259,20 +259,185 @@ require('lazy').setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
 
     config = function()
-      require('oil').setup()
-      vim.keymap.set('n', '-', ':Oil<CR>')
+      vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
+      require('oil').setup {
+
+        -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
+        -- Set to false if you still want to use netrw.
+        default_file_explorer = true,
+        -- Id is automatically added at the beginning, and name at the end
+        -- See :help oil-columns
+        columns = {
+          -- 'icon',
+          -- "permissions",
+          -- "size",
+          -- "mtime",
+        },
+        -- Buffer-local options to use for oil buffers
+        buf_options = {
+          buflisted = false,
+          bufhidden = 'hide',
+        },
+        -- Window-local options to use for oil buffers
+        win_options = {
+          wrap = false,
+          signcolumn = 'no',
+          cursorcolumn = false,
+          foldcolumn = '0',
+          spell = false,
+          list = false,
+          conceallevel = 3,
+          concealcursor = 'nvic',
+        },
+        -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
+        delete_to_trash = false,
+        -- Skip the confirmation popup for simple operations (:help oil.skip_confirm_for_simple_edits)
+        skip_confirm_for_simple_edits = false,
+        -- Selecting a new/moved/renamed file or directory will prompt you to save changes first
+        -- (:help prompt_save_on_select_new_entry)
+        prompt_save_on_select_new_entry = true,
+        -- Oil will automatically delete hidden buffers after this delay
+        -- You can set the delay to false to disable cleanup entirely
+        -- Note that the cleanup process only starts when none of the oil buffers are currently displayed
+        cleanup_delay_ms = 2000,
+        lsp_file_methods = {
+          -- Time to wait for LSP file operations to complete before skipping
+          timeout_ms = 1000,
+          -- Set to true to autosave buffers that are updated with LSP willRenameFiles
+          -- Set to "unmodified" to only save unmodified buffers
+          autosave_changes = false,
+        },
+        -- Constrain the cursor to the editable parts of the oil buffer
+        -- Set to `false` to disable, or "name" to keep it on the file names
+        constrain_cursor = 'editable',
+        -- Set to true to watch the filesystem for changes and reload oil
+        experimental_watch_for_changes = false,
+        -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap
+        -- options with a `callback` (e.g. { callback = function() ... end, desc = "", mode = "n" })
+        -- Additionally, if it is a string that matches "actions.<name>",
+        -- it will use the mapping at require("oil.actions").<name>
+        -- Set to `false` to remove a keymap
+        -- See :help oil-actions for a list of all available actions
+        keymaps = {
+          ['g?'] = 'actions.show_help',
+          ['<CR>'] = 'actions.select',
+          ['<C-s>'] = false, -- 'actions.select_vsplit',
+          ['<C-h>'] = false, -- 'actions.select_split',
+          ['<C-t>'] = 'actions.select_tab',
+          ['<C-p>'] = 'actions.preview',
+          ['<C-c>'] = 'actions.close',
+          ['<C-l>'] = false, -- 'actions.refresh',
+          ['-'] = 'actions.parent',
+          ['_'] = 'actions.open_cwd',
+          ['`'] = 'actions.cd',
+          ['~'] = 'actions.tcd',
+          ['gs'] = 'actions.change_sort',
+          ['gx'] = 'actions.open_external',
+          ['g.'] = 'actions.toggle_hidden',
+          ['g\\'] = 'actions.toggle_trash',
+        },
+        -- Configuration for the floating keymaps help window
+        keymaps_help = {
+          border = 'rounded',
+        },
+        -- Set to false to disable all of the above keymaps
+        use_default_keymaps = true,
+        view_options = {
+          -- Show files and directories that start with "."
+          show_hidden = false,
+          -- This function defines what is considered a "hidden" file
+          is_hidden_file = function(name, bufnr)
+            return vim.startswith(name, '.')
+          end,
+          -- This function defines what will never be shown, even when `show_hidden` is set
+          is_always_hidden = function(name, bufnr)
+            return false
+          end,
+          -- Sort file names in a more intuitive order for humans. Is less performant,
+          -- so you may want to set to false if you work with large directories.
+          natural_order = true,
+          sort = {
+            -- sort order can be "asc" or "desc"
+            -- see :help oil-columns to see which columns are sortable
+            { 'type', 'asc' },
+            { 'name', 'asc' },
+          },
+        },
+        -- EXPERIMENTAL support for performing file operations with git
+        git = {
+          -- Return true to automatically git add/mv/rm files
+          add = function(path)
+            return false
+          end,
+          mv = function(src_path, dest_path)
+            return false
+          end,
+          rm = function(path)
+            return false
+          end,
+        },
+        -- Configuration for the floating window in oil.open_float
+        float = {
+          -- Padding around the floating window
+          padding = 2,
+          max_width = 0,
+          max_height = 0,
+          border = 'rounded',
+          win_options = {
+            winblend = 0,
+          },
+          -- This is the config that will be passed to nvim_open_win.
+          -- Change values here to customize the layout
+          override = function(conf)
+            return conf
+          end,
+        },
+        -- Configuration for the actions floating preview window
+        preview = {
+          -- Width dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
+          -- min_width and max_width can be a single value or a list of mixed integer/float types.
+          -- max_width = {100, 0.8} means "the lesser of 100 columns or 80% of total"
+          max_width = 0.9,
+          -- min_width = {40, 0.4} means "the greater of 40 columns or 40% of total"
+          min_width = { 40, 0.4 },
+          -- optionally define an integer/float for the exact width of the preview window
+          width = nil,
+          -- Height dimensions can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
+          -- min_height and max_height can be a single value or a list of mixed integer/float types.
+          -- max_height = {80, 0.9} means "the lesser of 80 columns or 90% of total"
+          max_height = 0.9,
+          -- min_height = {5, 0.1} means "the greater of 5 columns or 10% of total"
+          min_height = { 5, 0.1 },
+          -- optionally define an integer/float for the exact height of the preview window
+          height = nil,
+          border = 'rounded',
+          win_options = {
+            winblend = 0,
+          },
+          -- Whether the preview window is automatically updated when the cursor is moved
+          update_on_cursor_moved = true,
+        },
+        -- Configuration for the floating progress window
+        progress = {
+          max_width = 0.9,
+          min_width = { 40, 0.4 },
+          width = nil,
+          max_height = { 10, 0.9 },
+          min_height = { 5, 0.1 },
+          height = nil,
+          border = 'rounded',
+          minimized_border = 'none',
+          win_options = {
+            winblend = 0,
+          },
+        },
+        -- Configuration for the floating SSH window
+        ssh = {
+          border = 'rounded',
+        },
+      }
     end,
   },
-
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
-  --
-  -- Use `opts = {}` to force a plugin to be loaded.
-  --
-  --  This is equivalent to:
-  --    require('Comment').setup({})
-  --
   {
     'christoomey/vim-tmux-navigator',
     lazy = false,
@@ -964,6 +1129,21 @@ require('lazy').setup({
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
+  {
+    'oflisback/obsidian-bridge.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require('obsidian-bridge').setup()
+    end,
+    event = {
+      'BufReadPre *.md',
+      'BufNewFile *.md',
+    },
+    lazy = true,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
 
   {
     'epwalsh/obsidian.nvim',
@@ -995,13 +1175,13 @@ require('lazy').setup({
 
         daily_notes = {
           -- Optional, if you keep daily notes in a separate directory.
-          folder = '_/calendar',
+          folder = '5. Calendar',
           -- Optional, if you want to change the date format for the ID of daily notes.
           date_format = '%Y/%m %B/%Y-%m-%d',
           -- Optional, if you want to change the date format of the default alias of daily notes.
           alias_format = '%B %-d, %Y',
           -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-          template = 'daily.md',
+          template = '5. Calendar/Templates/Daily Note.md',
         },
 
         -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -1039,29 +1219,16 @@ require('lazy').setup({
         -- Optional, customize how note IDs are generated given an optional title.
         ---@param title string|?
         ---@return string
-        --note_id_func = function(title)
-        -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-        -- In this case a note with the title 'My new note' will be given an ID that looks
-        -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-        -- local suffix = ''
-        -- if title ~= nil then
-        -- If title is given, transform it into valid file name.
-        -- suffix = title:gsub(' ', '-'):gsub('[^A-Za-z0-9-]', ''):lower()
-        -- else
-        -- If title is nil, just add 4 random uppercase letters to the suffix.
-        -- for _ = 1, 4 do
-        -- suffix = suffix .. string.char(math.random(65, 90))
-        -- end
-        -- end
-        -- return os.date '%y%m%d%H%M' .. '-' .. suffix
-        --end,
+        note_id_func = function(title)
+          return ''
+        end,
 
         -- Optional, customize how note file names are generated given the ID, target directory, and title.
         ---@param spec { id: string, dir: obsidian.Path, title: string|? }
         ---@return string|obsidian.Path The full path to the new note.
         note_path_func = function(spec)
           -- This is equivalent to the default behavior.
-          local path = spec.dir / 'inbox' / tostring(spec.id)
+          local path = spec.dir / '0. Inbox' / tostring(spec.id)
           return path:with_suffix '.md'
         end,
 
@@ -1094,30 +1261,9 @@ require('lazy').setup({
         -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
         disable_frontmatter = true,
 
-        -- Optional, alternatively you can customize the frontmatter data.
-        ---@return table
-        note_frontmatter_func = function(note)
-          -- Add the title of the note as an alias.
-          if note.title then
-            note:add_alias(note.title)
-          end
-
-          local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-
-          -- `note.metadata` contains any manually added fields in the frontmatter.
-          -- So here we just make sure those fields are kept in the frontmatter.
-          if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-            for k, v in pairs(note.metadata) do
-              out[k] = v
-            end
-          end
-
-          return out
-        end,
-
         -- Optional, for templates (see below).
         templates = {
-          subdir = '_/templates',
+          subdir = '.',
           date_format = '%Y-%m-%d',
           time_format = '%H:%M',
           -- A map for custom variables, the key should be the variable and the value a function
