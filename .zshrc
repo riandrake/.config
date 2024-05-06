@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf fd)
+plugins=(git fzf fd ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -252,7 +252,16 @@ eval "$(zoxide init zsh)"
 
 source ~/dotfiles/openai
 
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 
 eval $(thefuck --alias)
 eval $(thefuck --alias f)
+
+eval "$(ssh-agent -s)"
+
+export OBSIDIAN_REST_API_KEY=c758dec40726d18c2b9a3210ce4fdb06253b2174be51403641c1d0a8385aaa0c
