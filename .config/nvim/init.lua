@@ -1130,22 +1130,6 @@ require('lazy').setup({
     end,
   },
   {
-    'oflisback/obsidian-bridge.nvim',
-    dependencies = { 'nvim-telescope/telescope.nvim' },
-    config = function()
-      require('obsidian-bridge').setup()
-    end,
-    event = {
-      'BufReadPre *.md',
-      'BufNewFile *.md',
-    },
-    lazy = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
-
-  {
     'epwalsh/obsidian.nvim',
     lazy = false,
     event = {
@@ -1175,13 +1159,13 @@ require('lazy').setup({
 
         daily_notes = {
           -- Optional, if you keep daily notes in a separate directory.
-          folder = '5. Calendar',
+          folder = 'calendar',
           -- Optional, if you want to change the date format for the ID of daily notes.
           date_format = '%Y/%m %B/%Y-%m-%d',
           -- Optional, if you want to change the date format of the default alias of daily notes.
           alias_format = '%B %-d, %Y',
           -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-          template = '5. Calendar/Templates/Daily Note.md',
+          template = 'templates/daily-note.md',
         },
 
         -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -1228,7 +1212,7 @@ require('lazy').setup({
         ---@return string|obsidian.Path The full path to the new note.
         note_path_func = function(spec)
           -- This is equivalent to the default behavior.
-          local path = spec.dir / '0. Inbox' / tostring(spec.id)
+          local path = spec.dir / 'inbox' / tostring(spec.id)
           return path:with_suffix '.md'
         end,
 
