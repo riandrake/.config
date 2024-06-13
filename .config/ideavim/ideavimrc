@@ -69,7 +69,6 @@ nnoremap <F9> :action ToggleLineBreakpoint<CR>
 nnoremap <F10> :action Step<CR>
 nnoremap <F11> :action StepInto<CR>
 nnoremap <S-F11> :action StepOut<CR>
-nnoremap <C-B> :action BuildSolutionAction<CR>
 
 " Header/Source
 nnoremap <A-o> :action GotoRelated<CR>

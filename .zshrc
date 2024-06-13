@@ -252,11 +252,6 @@ eval "$(zoxide init zsh)"
 
 source ~/dotfiles/openai
 
-# PyEnv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 
 eval $(thefuck --alias)
