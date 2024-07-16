@@ -252,3 +252,8 @@ keybinding:
     addCoAuthor: 'c'
     resetAuthor: 'a'
     setAuthor: 'A'
+customCommands:
+  - key: 'F'
+    command: 'git fetch --prune'
+    context: 'remotes'
+    stream: true
